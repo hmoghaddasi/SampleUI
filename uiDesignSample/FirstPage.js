@@ -28,6 +28,11 @@ export default class FirstPage extends Component {
         const { navigation } = this.props
         navigation.navigate("SecondPage",{id: "5"})
     }
+    onSignInPress(page) {
+      const { navigation } = this.props
+      navigation.navigate("LoginPage",{mode: page})
+  }
+    
     render() {
         return (
             // <View style={{ width: '100%', height: '100%', alignItems:"center" }}>
@@ -39,8 +44,8 @@ export default class FirstPage extends Component {
             //   </View>
             //   <Text style={{fontSize: 16, color: colors.white, textAlign: "center", width: '55%'}}>{"Find and meet person around you to frodLOVE"}</Text>
             <Layout pinkTitle="CONN" whiteTitle="EXION">
-                <CustomTochable buttonText=" Sign in with Facebook" imageIcon={facebook} imageStyle={{ width: 30 }} containerStyle={{ marginTop: 100 }}></CustomTochable>
-                <CustomTochable buttonText=" Sign in with Twitter" imageIcon={twitter} containerStyle={{ marginTop: 20 }}></CustomTochable>
+                <CustomTochable buttonText=" Sign in with Facebook" imageIcon={facebook} onPress={(e)=>this.onSignInPress('fb')} imageStyle={{ width: 30 }} containerStyle={{ marginTop: 100 }}></CustomTochable>
+                <CustomTochable buttonText=" Sign in with Twitter" imageIcon={twitter} onPress={(e)=>this.onSignInPress('tw')} containerStyle={{ marginTop: 20 }}></CustomTochable>
                 <CustomTochable buttonText=" Sign up" containerStyle={{ marginTop: 20 }} onPress={this.onSignUpPress}></CustomTochable>
                 {/* <TouchableOpacity style={{ backgroundColor: colors.white, justifyContent: "center", height: 60, width: "85%", alignItems: "center", flexDirection: "row", borderRadius: 60 / 2, marginTop: 100 }}>
           <Image source={facebook} style={{ width: 30, height: 36, resizeMode: "contain", tintColor: colors.pink }}></Image>

@@ -3,7 +3,7 @@ import { Platform, StyleSheet, Text, View, Image, TouchableOpacity } from 'react
 import LinearGradient from 'react-native-linear-gradient';
 import { logo, facebook, twitter } from './assets';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+// import colors from './colors';
 
 const colors = {
     "orange": "#ff7745",
@@ -17,7 +17,7 @@ export default class Layout extends Component {
             <View style={{ width: '100%', height: '100%', alignItems: "center" }}>
                 <LinearGradient colors={[colors.orange, colors.pink]} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
                 <Image source={logo} style={{ width: `45%`, height: 70, marginTop: 40 }} />
-                <View style={{ flexDirection: "row", width: '45%' }}>
+                <View style={{ flexDirection: "row", width: '45%',  justifyContent: "center", alignItems: "center" }}>
                     <Text style={{ fontSize: 35, color: colors.pink }}>{pinkTitle}</Text>
                     <Text style={{ fontSize: 35, color: colors.white }}>{whiteTitle}</Text>
                 </View>
