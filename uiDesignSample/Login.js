@@ -20,11 +20,12 @@ export default class Login extends Component {
     }
 
     render() {
-        // const { mode } = this.props.navigation.state.params
+        const { mode } = this.props.navigation.state.params
+        console.log(mode,"=======================")
         return (
             <Layout>
                 <View style={{ justifyContent: "center", width: '85%', alignItems: "center" }}>
-                    <Text style={{ color: colors.white, marginTop: 20, fontSize: 24, alignContent: "center" }}>{"SIGN IN "}
+                    <Text style={{ color: colors.white, marginTop: 20, fontSize: 24, alignContent: "center" }}>{"SIGN IN " + mode}
                         {/* { this.mode} */}
                     </Text>
                 </View>

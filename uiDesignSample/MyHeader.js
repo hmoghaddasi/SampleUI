@@ -25,19 +25,20 @@ export default class MyHeader extends Component {
   }
     render() {
       const { menuShow } = this.state
+      const {onMenuItemPress, name} = this.props
+      console.log(name ,"============= name header")
         return (
           <View style={{flexDirection: 'row'}}>
               <TouchableOpacity style={{ backgroundColor: colors.white, alignItems:'center', height: 36, width: 36,  borderRadius: 5 / 2,
-              marginTop:10, marginLeft:10, borderColor:colors.purple}} onPress={() => {this.setShowMenu(true);}}>
+              marginTop:10, marginLeft:10, borderColor:colors.purple}} onPress={onMenuItemPress}>
                 <Image source={menu} style={{ width: 32, height: 32, resizeMode: 'stretch', tintColor: colors.purple }} ></Image>
               </TouchableOpacity>
               <View style={{alignItems:"center"}}>
               <Text style={{ color: colors.purple, alignSelf:'center', fontSize:36}}>
-                Header
+                {name}
               </Text>
               </View>
 
-              <MyMenu showMenu={menuShow} hideMenu={() => this.setShowMenu(false)}></MyMenu>
           </View>
         )
     }

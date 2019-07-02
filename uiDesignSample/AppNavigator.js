@@ -1,17 +1,28 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import SecoundPage from './SecoundPage';
+import { createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation';
+// import SecoundPage from './SecoundPage';
 import FirstPage from './FirstPage';
 import LoginPage from './Login';
 import AradoPage from './AradoPage';
 import ThirdExercise from './ThirdExercise';
+import MyMenu from './menu';
+import { SecoundPage } from './src/page';
 // import {FirstPage, SecoundPage, LoginPage, AradoPage} from './src'
+ const MyDrawer=createDrawerNavigator({
+     Home:ThirdExercise,
+     Search:ThirdExercise
+ },{
+     contentComponent:(e)=>{return(<MyMenu params={e}/>)},
+     
+ })
 
 const MainNavigator = createStackNavigator({
-    ThirdExercise: ThirdExercise,
-    AradoPage: AradoPage,
+    //  ThirdExercise: ThirdExercise,
+    SP: SecoundPage,
+     MyDrawer:MyDrawer,
+     AradoPage: AradoPage,
     FirstPage: FirstPage,
-    SecondPage: SecoundPage,
+    // SecondPage: SecoundPage,
     LoginPage: LoginPage,
 }, {
         headerMode: "none"
