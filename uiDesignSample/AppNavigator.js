@@ -8,19 +8,19 @@ import ThirdExercise from './ThirdExercise';
 import MyMenu from './menu';
 import { SecoundPage } from './src/page';
 // import {FirstPage, SecoundPage, LoginPage, AradoPage} from './src'
- const MyDrawer=createDrawerNavigator({
-     Home:ThirdExercise,
-     Search:ThirdExercise
- },{
-     contentComponent:(e)=>{return(<MyMenu params={e}/>)},
-     
- })
+const MyDrawer = createDrawerNavigator({
+    Home: ThirdExercise,
+    Search: ThirdExercise
+}, {
+        contentComponent: (e) => { return (<MyMenu params={e} />) },
+
+    })
 
 const MainNavigator = createStackNavigator({
     //  ThirdExercise: ThirdExercise,
+    MyDrawer: MyDrawer,
     SP: SecoundPage,
-     MyDrawer:MyDrawer,
-     AradoPage: AradoPage,
+    AradoPage: AradoPage,
     FirstPage: FirstPage,
     // SecondPage: SecoundPage,
     LoginPage: LoginPage,
