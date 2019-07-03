@@ -14,7 +14,7 @@ export default class MyTextInput extends Component {
     render() {
         const {} = this.props
         return (
-            <TextInput placeholderTextColor={colors.white} secureTextEntry={true} style={{
+            <TextInput placeholderTextColor={colors.white}  style={{
                 fontSize: 20, color: colors.white, width: '95%',
                 height: 40, textAlign: "left", marginTop: 20, borderBottomColor: colors.white, borderBottomWidth: 1
             }} {...this.props} />

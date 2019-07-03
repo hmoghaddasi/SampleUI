@@ -18,9 +18,9 @@ const MyDrawer = createDrawerNavigator({
 
 const MainNavigator = createStackNavigator({
     //  ThirdExercise: ThirdExercise,
-    MyDrawer: MyDrawer,
-    SP: SecoundPage,
-    AradoPage: AradoPage,
+    // MyDrawer: MyDrawer,
+    // SP: SecoundPage,
+    // AradoPage: AradoPage,
     FirstPage: FirstPage,
     // SecondPage: SecoundPage,
     LoginPage: LoginPage,

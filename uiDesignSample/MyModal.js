@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { View, Modal, TouchableOpacity, Text } from 'react-native'
 import {colors} from './colors'
 import { TextInput } from 'react-native-gesture-handler';
+import { setSearchValue } from './src/redux/action';
+import { connect } from 'react-redux';
 
-export default class MyModal extends Component {
+class MyModal extends Component {
     constructor(props){
         super(props);
         this.onSearchPress=this.onSearchPress.bind(this)
@@ -22,7 +24,7 @@ export default class MyModal extends Component {
         this.props.onRequestClose();
     }
     render() {
-        const { showModal, hideModal, searchResult } = this.props
+        const { showModal, hideModal, searchResult, setSearchValue } = this.props
         const {searchValue} = this.state
         return (
             <Modal
@@ -38,7 +40,12 @@ export default class MyModal extends Component {
                         shadowOpacity: 2,
                         shadowRadius: 2, elevation: 2,
                     }}>
-                        <TextInput onChangeText={(e) => this.setState({ searchValue: e })} placeholder="Enter Some Text"
+                        <TextInput 
+                        onChangeText={
+                            (e) => setSearchValue(e)
+                            // this.setState({ searchValue: e })
+                        } 
+                        placeholder="Enter Some Text"
                         style={{borderBottomColor:colors.pink, borderBottomWidth:2, width:'80%'}}></TextInput>
 
                         < TouchableOpacity onPress={this.onSearchPress} style={{ backgroundColor: colors.white, justifyContent: "center", 
@@ -57,3 +64,11 @@ export default class MyModal extends Component {
         )
     }
 }
+
+const MapState = (store) => ({
+    
+})
+
+export default connect(MapState,{
+    setSearchValue
+})(MyModal)
